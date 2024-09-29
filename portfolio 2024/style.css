@@ -23,7 +23,7 @@ a {
 }
 
 body{
-    --primary: #002060;
+    --primary: #001c53;
     --secondary: #FEFFFF;
     --tertiary: #00A3FF;
     --blue: #2F5597;
@@ -118,12 +118,17 @@ p{
 }
 
 
-
+.grid_1-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 
 
 
 /*-----------Animationer-----------*/
+
+
 
 /* Zoom effekt */
 .cirkel {
