@@ -68,7 +68,6 @@ p{
 }
 
 
-
 .screen1{
     object-fit: cover;
     width: 100vw;
@@ -77,8 +76,8 @@ p{
 }
 
 .cirkel{
-    width: 10rem;
-    height: 10rem;
+    width: 3rem;
+    height: 3rem;
     background-color: var(--primary);
     position: absolute;
     border-radius: 50%;
@@ -93,6 +92,16 @@ p{
     object-fit: cover;
     width: 100vw;
     height: 100vh;
+    position: relative;
+}
+
+.striber{
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .video1 {
@@ -117,10 +126,13 @@ p{
 /*-----------Animationer-----------*/
 
 /* Zoom effekt */
+.cirkel {
+    transition: transform 1.5s ease; /* Dette gør zoom-animeringen glidende */
+}
+
 .zoom {
-    transform: scale(15); /* Zoom 15 gange ind */
-    transition: transform 0.5s ease-in-out; /* Animation over 0.5 sekunder */
-  }
+    transform: scale(50); /* Juster skalaen som ønsket */
+}
   
   /* Fade væk og flyt opad */
   .fade-up {
@@ -129,25 +141,14 @@ p{
     transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Animationens varighed og timing */
   }
 
-
-.pulse  {
-    animation-name: pulse;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+  .fade-up-slow {
+    opacity: 0;
+    transform: translateY(-300px);
+    transition: opacity 1s ease, transform 2s ease; /* Langsommere fade-up */
 }
 
-@keyframes pulse {
-    0% {
-        scale: 1;
-    }
-    50% {
-        scale: 1.2;
-    }
-    100% {
-        scale: 1;
-    }
-}
+
+
 
 .hide
   {

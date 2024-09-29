@@ -1,3 +1,4 @@
+
 // Opretter en class med en constructor til mine objekter
 class ScreenManager {
     constructor() {
@@ -21,17 +22,19 @@ class ScreenManager {
         this.hideAllScreens();
 
         this.firstScreen.classList.remove("hide");
-        this.circle.classList.add("pulse");
 
         // Fjerner zoom-klassen, så den kan aktiveres igen
         this.circle.classList.remove("zoom");
 
-        this.circle.addEventListener("mouseover", () => this.getSecondScreen());
+        // Starter zoom-animationen igen
+        setTimeout(() => {
+            this.getSecondScreen();
+        }, 1000); 
     }
 
     getSecondScreen() {
         console.log("getSecondscreen");
-        // Adder zoom-klassen igen
+        // Adder zoom-klassen
         this.circle.classList.add("zoom");
 
         setTimeout(() => {
@@ -47,10 +50,17 @@ class ScreenManager {
         console.log("Fade out secondscreen");
         this.secondScreen.classList.add("fade-up");
 
+        // Finder .striber classen og tilføjer fade-up-slow animation
+        const striber = this.secondScreen.querySelector(".striber");
+        if (striber) {
+            console.log("Striber elementet blev fundet", striber);
+            striber.classList.add("fade-up-slow");  
+        }
+
         setTimeout(() => {
             this.hideAllScreens();
             this.aboutScreen.classList.remove("hide");
-        }, 1000);
+        }, 1000);  
     }
 
     hideAllScreens() {
@@ -62,7 +72,7 @@ class ScreenManager {
 
     windowResize() {
         let widthScreen = document.querySelector("main").clientWidth;
-        // Sørger for and skærmen altid resizer 
+        // Sørger for at skærmen altid resizer 
     }
 }
 
