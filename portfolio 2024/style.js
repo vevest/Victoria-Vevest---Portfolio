@@ -164,7 +164,7 @@ multimediadesigner.addPortfolioProject(
 
 multimediadesigner.addPortfolioProject(
     new Project(
-        "GAME: Mortens Kyllinger",
+        "Spil: Mortens Kyllinger",
         "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/placeholder.jpg",
         "https://victoriavevest.com/mortenskyllinger/")
 );
@@ -184,7 +184,7 @@ function displayProjects(projects) {
         projectDiv.classList.add("project");
 
         projectDiv.innerHTML = `
-            <h2>${project.name}</h2>
+            <h4>${project.name}</h4>
             <img src="${project.img}" alt="${project.name} Image" style="width: 100%; max-width: 300px;"> <!-- Tilføjet billede her -->
             <p>${project.description}</p>
             <a href="${project.link}" target="_blank">View Project</a>
