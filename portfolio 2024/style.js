@@ -81,178 +81,144 @@ const screenManager = new ScreenManager();
 
 
 
-// laver en klasse med en række metoder
-class MultiMedieDesigner {
-    #name
-    #img
-    #biography
-    #skills
-    #portfolioProject
 
-    constructor(name, img, biography, skills, portfolioProject = [projectName, projectDesc, projectLink, projectSkills, projectImg]) {
+
+
+// Opretter en separat klasse til projektet i mit portfolio for bedre struktur af hvad der indgår
+class Project {
+    constructor(name, description, skills = [], img, link,) {
+        this.name = name;
+        this.description = description;
+        this.skills = skills;
+        this.img = img;
+        this.link = link;
+    }
+}
+
+class MultimediaDesigner {
+    #name;
+    #img;
+    #biography;
+    #skills;
+    #portfolioProjects;
+
+    constructor(name, img, biography, skills = []) {
         this.#name = name;
         this.#img = img;
         this.#biography = biography;
         this.#skills = skills;
-        this.#portfolioProject = portfolioProject;
+        this.#portfolioProjects = [];
     }
 
-    getName() {
+    // Getters for at få værdier (ingen brug af separate metoder som `getName`, `getBiography` osv.)
+    get name() {
         return this.#name;
     }
 
-    setName(name) {
-        this.#name = name;
+    get biography() {
+        return this.#biography;
     }
 
-    getImg() {
-        return this.#img;
+    get skills() {
+        return this.#skills;
     }
 
-    setImg() {
-        this.#img = img;
+    get portfolioProjects() {
+        return this.#portfolioProjects;
     }
+  
 
-
-    getBiography() {
-        return this.#biography
-    }
-
-    setBiography(biography) {
-        this.#biography = biography;
-    }
-
-    getSkills() {
-        return this.#skills
-    }
-
-    setSkills(skills) {
-        this.#skills = skills;
-    }
-
-    getPortfolioProject() {
-        return this.#portfolioProject;
-    }
-
-    setPortfolioProject(portfolioProject) {
-        this.#portfolioProject = portfolioProject;
-
-    }
-
+    // Metode til at tilføje et projekt
     addPortfolioProject(project) {
-        this.#portfolioProject.push(project)
+      //tjekker at argumentet er en instance af projektklassen, hvis den er bliver den føjet til portfolioprojects
+        if (project instanceof Project) {
+            this.#portfolioProjects.push(project);
+          //hvis den ikke er bliver der logget fejlmeddelse
+        } else {
+            console.error("Invalid project format");
+        }
     }
 
+    // Metode til at filtrere projekter baseret på en færdighed
     filterProjectsBySkill(skill) {
-        if (skill === 'all') {
-            return this.#portfolioProject;
-        }
-        return this.#portfolioProject.filter(project =>
-            project.projectSkills && project.projectSkills.includes(skill)
+        return this.#portfolioProjects.filter(project =>
+            project.skills.includes(skill)
         );
     }
-
 }
 
-// definere alle metoderne
+// Opretter en variable af MultimediaDesigner 
+const multimediadesigner = new MultimediaDesigner(
+    "Victoria Vevest",
+    "img/placeholder.jpg", // Mangler billede
+    "Creative and curious designer, with ambition and appetite for knowledge",
+    ["HTML", "CSS", "JavaScript", "React", "Typescript", "Illustrator", "Figma", "After Effects", "InDesign", "WordPress", "GitHub", "SASS", "SCSS"]
+);
 
-const project = new MultiMedieDesigner("Marc Møller",
-    "https://images.pexels.com/photos/69932/tabby-cat-close-up-portrait-69932.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "Web Developer",
-    ["HTML", "CSS", "SASS", "SCSS", "JS", "Wordpress", "After Effects", "Illustrator", "Figma", "InDesign", "Adobe Xd"],
-    [
-        { projectName: "Quizcoon", projectDesc: "Quiz Game about Entrepreneurship", projectLink: "https://game.marcm.dk", projectSkills: ["JS"], projectImg: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-        { projectName: "The Movie Zone", projectDesc: "Science Fiction hjemmeside lavet i Bootstrap", projectLink: "https://tmz.marcm.dk", projectSkills: ["HTML", "CSS"], projectImg: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" }
-    ])
+// Opretter projekter og tilføjer dem til portfolio ved hjælp af Project-klassen
+multimediadesigner.addPortfolioProject(
+    new Project(
+        "Beyond Branding",
+        "A Multimedia design bureau that creates bold, brave and innovative web-solutions", ["HTML", "CSS", "GitHub", "InDesign", "After Effects", "SASS", "SCSS", "Figma"], "img/placeholder.jpg", "https://www.rannvagn.com/Branding/")
+);
 
+multimediadesigner.addPortfolioProject(
+    new Project(
+        "GAME: Mortens Kyllinger",
+        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/placeholder.jpg",
+        "https://victoriavevest.com/mortenskyllinger/")
+);
 
-console.log(project.getPortfolioProject());
+console.log(multimediadesigner.portfolioProjects);
 
+//Nu vil jeg gerne vise det på min website og jeg bruger nu min html
 
-//smider det over til HTML 
+// Funktion til at vise projekter på siden
+function displayProjects(projects) {
+    const projectList = document.getElementById("projectList");
+    projectList.innerHTML = ""; // Tømmer projektlisten
 
-const displayProjects = (projectsToDisplay = project.getPortfolioProject()) => {
-    const projectCards = document.getElementById('projectCards')
+    projects.forEach(project => {
+        // Opret HTML for hvert projekt
+        const projectDiv = document.createElement("div");
+        projectDiv.classList.add("project");
 
-    projectCards.innerHTML = '';
-
-    projectsToDisplay.forEach((project) => {
-        const projectCard = document.createElement('div');
-        projectCard.classList.add('project-card')
-
-        projectCard.innerHTML = `
-            <div class="project-details" id="projectDetails">
-            <h3>${project.projectName}</h3>
-              <div class="skill-tags">${project.projectSkills.map(skill => `<span>${skill}</span>`).join(' ')} </div>
-            <p>${project.projectDesc}</p>
-            <a href="${project.projectLink}" target="_blank">View Project</a>
-    
+        projectDiv.innerHTML = `
+            <h2>${project.name}</h2>
+            <p>${project.description}</p>
+            <a href="${project.link}" target="_blank">View Project</a>
+            <div class="skills">
+                <strong>Skills:</strong> ${project.skills.map(skill => `<span>${skill}</span>`).join(" ")}
             </div>
-            <div class="project-img" id="projectImg">
-                <img src=${project.projectImg} alt="" >
-            </div>
-        `
+        `;
 
-        projectCards.appendChild(projectCard)
+        projectList.appendChild(projectDiv); // Tilføj projektet til DOM'en
     });
 }
 
-const displayDetails = () => {
-    const myDetails = document.getElementById('myDetails');
+// Viser alle projekter ved første indlæsning
+displayProjects(multimediadesigner.portfolioProjects);
 
-    const name = project.getName();
-    const img = project.getImg();
-    const biography = project.getBiography();
-    const mySkills = project.getSkills();
+// Funktion til at vise knapper for færdigheder
+function displaySkillButtons(skills) {
+    const skillButtonsContainer = document.getElementById("skillButtons");
+    skillButtonsContainer.innerHTML = ""; // Tømmer knaplisten
 
-    myDetails.innerHTML = `
-      <div>
-           <img src=${img} alt="">
-        </div>
-        <div>
-            <h2>${name}</h2>
-            <span>${biography}</span>
-            <div></div>
-        </div>
-        `;
+    skills.forEach(skill => {
+        const button = document.createElement("button");
+        button.textContent = skill;
+
+        // Event listener for klik på færdigheds-knap
+        button.addEventListener("click", () => {
+            const filteredProjects = multimediadesigner.filterProjectsBySkill(skill);
+            displayProjects(filteredProjects);
+        });
+
+        skillButtonsContainer.appendChild(button); // Tilføj knappen til DOM'en
+    });
 }
 
-
-window.onload = () => {
-
-    displayDetails();
-    displayProjects();
-
-}
-
-// laver nyt project
-
-project.addPortfolioProject({
-    projectName: "Colossal Cave Adventure",
-    projectDesc: "A game where players use written commands to interact with the game.",
-    projectLink: "https://cc.marcm.dk",
-    projectSkills: ["HTML", "CSS", "JS"],
-    projectImg: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-
-})
-
-
-//Filtere projekterne
-
-document.getElementById('filterHTML').addEventListener('click', () => {
-    const filteredProjects = project.filterProjectsBySkill("HTML");
-    displayProjects(filteredProjects);
-});
-
-document.getElementById('filterCSS').addEventListener('click', () => {
-    const filteredProjects = project.filterProjectsBySkill("CSS");
-    displayProjects(filteredProjects);
-});
-
-document.getElementById('filterJS').addEventListener('click', () => {
-    const filteredProjects = project.filterProjectsBySkill("JS");
-    displayProjects(filteredProjects);
-});
-
+// Viser alle færdigheder som klikbare knapper
+displaySkillButtons(multimediadesigner.skills);
 
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <main>
         <div id="firstscreen" class="hide">
             <img class="screen1" src="img/screen1.png">
@@ -21,40 +22,39 @@
         </div>
 
         <section id="about" class="hide">
-            <h1>Victoria Vevest</h1>
-            <h2>Frontend Udvikler, studerende</h2>
             <div class="grid_1-1">
+                <div>
+                    <h1>Victoria Vevest</h1>
+                    <h2>Frontend Udvikler, studerende</h2>
+                </div>
                 <p>
-                I sommeren 2022 startede jeg på en bachelor i  sociologi. Jeg fandt dog hurtigt ud af, at det eneste der fangede mig ved udannelsen var, når vi skulle bruge et programmeringssprog til at håndtere dataset. Min interesse for kodning blev vakt til livs og siden da vokset. I sommeren 2023 startede jeg på uddannelsen Multimediedesign og har nu på mit 3. semester valgt at specialisere mig i webudvikling - kodning. Jeg er vild med at kunne kombinere min kreative side med min logisk-tænkende og nørdede side. <br> <br> Mit fokus er i øjeblikket at dygtiggøre mig inden for OOP JavaScript, og udvide mit repetoire af kodesprog. Jeg har et mål om at blive fullstack developer i fremtiden, men lige nu fokuserer jeg på skulle at lære mit første backend sprog snart. <br> <br>
+                I sommeren 2022 startede jeg på en bachelor i  sociologi. Jeg fandt dog hurtigt ud af, at det eneste der fangede mig ved udannelsen var, når vi skulle bruge et programmeringssprog til at håndtere dataset. Min interesse for kodning blev vakt til livs og siden da vokset. I sommeren 2023 startede jeg på uddannelsen Multimediedesign og har nu på mit 3. semester valgt at specialisere mig i webudvikling - kodning. Jeg er vild med at kunne kombinere min kreative side med min logisk-tænkende og nørdede side. <br> <br> Mit fokus er i øjeblikket at dygtiggøre mig inden for OOP JavaScript, og udvide mit repetoire af kodesprog. Jeg har et mål om at blive fullstack developer i fremtiden, men lige nu fokuserer jeg på skulle at ville lære mit første backend sprog. <br> <br>
                Når jeg ikke sidder hypnotiseret bag computeren, spiller jeg musical teater, danser og bruger tid med min lille gravhund.
                 </p>
-                <div class="container-vid">
-                    <video class="video1" autoplay muted loop>
-                        <source src="video/video10.mp4" type="video/mp4" alt="En video af mig i forskellige scenarier der beskriver min personlighed">
-                    Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-        </section>
-        
-        <section class="experience">
-            <div class="experience-cards" id="experienceCards">
-                <div class="experience-img" id="experienceImg"></div>
             </div>
         </section>
 
-        <section class="project">
-            <div class="project-filter" id="projectFilter">
-                <span>Filter by skills:</span>
-                <button id="filterHTML">HTML</button>
-                <button id="filterCSS">CSS</button>
-                <button id="filterJS">JS</button>
-                <button id="filterAll">All</button>
+        <div class="container">
+            <h3>Projekter</h3>
+    
+            <!-- Skill buttons -->
+            <div class="skill-buttons" id="skillButtons">
+                <!-- Knapper for færdigheder bliver genereret her via JavaScript -->
             </div>
-            <div class="project-cards" id="projectCards">
-                <div class="project-img" id="projectImg"></div>
+    
+            <!-- Project List -->
+            <div id="projectList">
+                <!-- Projekter bliver tilføjet her dynamisk via JavaScript -->
             </div>
-        </section>
+        </div>
+    
+
+        <div class="container-vid">
+            <video class="video1" autoplay muted loop>
+                <source src="video/video10.mp4" type="video/mp4" alt="En video af mig i forskellige scenarier der beskriver min personlighed">
+            Your browser does not support the video tag.
+            </video>
+        </div>
 
         <section id="contactscreen" class="hide">
             <div class="contact">

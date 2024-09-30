@@ -34,6 +34,8 @@ body{
     background-color: var(--primary);
     color: var(--secondary);
     width: 100vw;
+    max-width: 1000px;
+
 }
 
 
@@ -121,6 +123,8 @@ p{
 .grid_1-1{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    margin-top: 3rem;
 }
 
 
