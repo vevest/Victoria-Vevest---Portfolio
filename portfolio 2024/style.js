@@ -185,6 +185,7 @@ function displayProjects(projects) {
 
         projectDiv.innerHTML = `
             <h2>${project.name}</h2>
+            <img src="${project.img}" alt="${project.name} Image" style="width: 100%; max-width: 300px;"> <!-- Tilføjet billede her -->
             <p>${project.description}</p>
             <a href="${project.link}" target="_blank">View Project</a>
             <div class="skills">
