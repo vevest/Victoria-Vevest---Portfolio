@@ -1,4 +1,4 @@
-
+'use strict';
 // Opretter en class med en constructor til mine objekter
 class ScreenManager {
     constructor() {
