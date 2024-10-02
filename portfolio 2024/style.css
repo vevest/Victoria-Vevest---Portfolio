@@ -113,9 +113,8 @@ p{
 }
 
 .video1 {
-    padding: 2rem;
-    width: 25rem;
-    height: 25rem;
+    padding-top: 2rem;
+    width: 100vw;
     object-fit: cover;
 }
 
