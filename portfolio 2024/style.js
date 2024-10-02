@@ -152,7 +152,7 @@ const multimediadesigner = new MultimediaDesigner(
     "Victoria Vevest",
     "img/placeholder.jpg", // Mangler billede
     "Creative and curious developer, with ambition and appetite for knowledge",
-    ["HTML", "CSS", "JavaScript", "React", "Typescript", "Illustrator", "Figma", "After Effects", "InDesign", "WordPress", "GitHub", "SASS", "SCSS"]
+    ["HTML", "CSS", "JavaScript", "SCSS", "View All"]
 );
 
 // Opretter projekter og tilføjer dem til portfolio ved hjælp af Project-klassen
@@ -223,3 +223,5 @@ function displaySkillButtons(skills) {
 displaySkillButtons(multimediadesigner.skills);
 
 
+//-------Smooth scroll når links klikkes
+var scroll = new SmoothScroll('a[href*="#"]');

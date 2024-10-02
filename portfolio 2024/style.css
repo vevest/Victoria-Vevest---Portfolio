@@ -40,20 +40,26 @@ body{
     background-color: var(--primary);
     color: var(--secondary);
     width: 100vw;
-    max-width: 1000px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
+main {
+    margin-left: 500px;
+  }
+
 
 h1{
-    margin-top: 5rem;
+    margin-top: 4rem;
     font-family: "Oswald-bold";
-    font-size: 60px;
+    font-size: 56px;
 }
 
 h2{
     font-family: "Oswald-light";
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 1.7rem;
     color: var(--tertiary);
 }
@@ -75,6 +81,32 @@ p{
     color: var(--grey) ;
 }
 
+.sidenav {
+    height: 100%;
+    width: 500px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--primary);
+    overflow-x: hidden;
+    padding-left: 4rem ;
+  }
+
+  .sidenav a {
+    text-decoration: none;
+    font-family: "Oswald-medium";
+    font-size: 30px;
+    font-size: 25px;
+    color: var(--secondary);
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: var(--tertiary);
+  }
+
+
 
 .screen1{
     object-fit: cover;
@@ -92,6 +124,7 @@ p{
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: transform 1.5s ease; 
     transition-timing-function: ease-in-out;
     transition-duration: 3s;
 }
@@ -112,9 +145,16 @@ p{
     left: 0;
 }
 
+#about{
+    padding-top: 7rem;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5rem;
+}
+
 .video1 {
     padding-top: 2rem;
-    width: 100vw;
     object-fit: cover;
 }
 
@@ -124,25 +164,74 @@ p{
     justify-content: center;
 }
 
+/*------- projekt og filterbuttons-------*/
 
-.grid_1-1{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 3rem;
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 4rem;
 }
+
+.container h2{
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+#skillButtons button{
+    appearance: none; 
+    background: none; 
+    border: none; 
+    background-color: #12315F;
+    padding: 3px 13px;
+    margin-right: 2px;
+    border-radius: 14px;
+    font-size: 18px;
+    color: #00E5FF;
+    font-family: "Oswald-medium"; 
+    margin-top: 10px;
+    cursor: pointer;
+    border: 1px solid #12315F;
+}
+
+#skillButtons button:hover{
+    color: #00E5FF;
+    border: 1px solid #00E5FF;
+}
+
+#skillButtons button:focus{
+    color: #12315F;
+    background-color: #00E5FF;
+}
+
+#skillButtons {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+    align-self: flex-start;
+}
+
+
 
 /* -----------Projekter styles -----------*/
 
 .project {
-    background-color: #071B49;
-    border: 2px solid #0C2151;
+    border: 0.5px solid var(--primary);
     padding: 4rem 2rem;
     max-width: 600px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5em;
+    margin-top: 1.5rem;
+    border-radius: 14px;
 }
 
+.project:hover{
+    background-color: #071B49;
+    border: 0.5px solid #0C2151;
+    
+}
 .project h4{
     grid-column: 1/2;
     grid-row: 1/2;
@@ -190,46 +279,15 @@ p{
     margin-top: 10px;
 }
 
-#skillButtons button{
-    appearance: none; 
-    background: none; 
-    border: none; 
-    background-color: #12315F;
-    padding: 3px 13px;
-    margin-right: 2px;
-    border-radius: 14px;
-    font-size: 18px;
-    color: #00E5FF;
-    font-family: "Oswald-medium"; 
-    margin-top: 10px;
-    cursor: pointer;
-    border: 1px solid #12315F;
-}
 
-#skillButtons button:hover{
-    color: #00E5FF;
-    border: 1px solid #00E5FF;
-}
-
-#skillButtons button:focus{
-    color: #12315F;
-    background-color: #00E5FF;
-}
-
-#skillButtons {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 10px; 
-    margin-bottom: 20px; 
-}
 
 /*-----------Animationer-----------*/
 
 
 
-/* Zoom effekt */
+
 .cirkel {
-    transition: transform 1.5s ease; /* Dette gør zoom-animeringen glidende */
+    transition: transform 1.5s ease; 
 }
 
 .zoom {
