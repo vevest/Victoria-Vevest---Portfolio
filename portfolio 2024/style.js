@@ -159,13 +159,13 @@ const multimediadesigner = new MultimediaDesigner(
 multimediadesigner.addPortfolioProject(
     new Project(
         "Beyond Branding",
-        "A Multimedia design bureau that creates bold, brave and innovative web-solutions", ["HTML", "CSS", "GitHub", "InDesign", "After Effects", "SASS", "SCSS", "Figma"], "img/placeholder.jpg", "https://www.rannvagn.com/Branding/")
+        "A Multimedia design bureau that creates bold, brave and innovative web-solutions", ["HTML", "CSS", "GitHub", "InDesign", "After Effects", "SASS", "SCSS", "Figma"], "img/spil-start.png", "https://www.rannvagn.com/Branding/")
 );
 
 multimediadesigner.addPortfolioProject(
     new Project(
         "Spil: Mortens Kyllinger",
-        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/placeholder.jpg",
+        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
         "https://victoriavevest.com/mortenskyllinger/")
 );
 
