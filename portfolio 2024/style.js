@@ -189,7 +189,7 @@ function displayProjects(projects) {
             <p>${project.description}</p>
             <a href="${project.link}" target="_blank">View Project</a>
             <div class="skills">
-                <strong>Skills:</strong> ${project.skills.map(skill => `<span>${skill}</span>`).join(" ")}
+                ${project.skills.map(skill => `<span>${skill}</span>`).join(" ")}
             </div>
         `;
 
