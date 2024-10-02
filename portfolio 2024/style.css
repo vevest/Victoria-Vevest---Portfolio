@@ -150,7 +150,7 @@ p{
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
 }
 
 .video1 {
@@ -219,7 +219,7 @@ p{
 
 .project {
     border: 0.5px solid var(--primary);
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     max-width: 600px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -289,27 +289,28 @@ p{
 }
 
 
-#gennemgang .kyllinger{
+#gennemgang #kyllinger{
     object-fit: cover;
     width: 85%;
     padding-bottom: 5rem;
+    padding-top: 2.5rem;
 }
 
-#gennemgang .ikoner{
+#gennemgang #ikoner{
     object-fit: cover;
     width: 85%;
     padding-bottom: 7rem;
     padding-left: 4%;
 }
 
-#gennemgang .morten{
+#gennemgang #morten{
     object-fit: cover;
     width: 60%;
     padding-bottom: 7rem;
     padding-left: 4%;
 }
 
-#gennemgang .javascript{
+#gennemgang #javascript{
     object-fit: cover;
     width: 100%;
     padding-bottom: 7rem;
@@ -324,13 +325,14 @@ p{
     padding-bottom: 2rem;
 }
 
-#gennemgang p {
+#gennemgang #optimering {
     padding: 3rem;
     background-color: #122B65;
     width: 80%;
     border-radius: 14px;
     margin-bottom: 7rem;
     box-shadow: 0px 4px 10px #000c1e34;
+    margin-left: 4%;
 }
 
 
