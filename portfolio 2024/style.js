@@ -164,9 +164,30 @@ multimediadesigner.addPortfolioProject(
 
 multimediadesigner.addPortfolioProject(
     new Project(
-        "Spil: Mortens Kyllinger",
+        "Mortens Kyllinger",
         "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
         "https://victoriavevest.com/mortenskyllinger/")
+);
+
+multimediadesigner.addPortfolioProject(
+    new Project(
+        "Real Relief",
+        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
+        "https://victoriavevest.com/mortenskyllinger/")
+);
+
+multimediadesigner.addPortfolioProject(
+    new Project(
+        "Digital Sikkerhed",
+        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
+        "https://victoriavevest.com/mortenskyllinger/")
+);
+
+multimediadesigner.addPortfolioProject(
+    new Project(
+        "Bedstemors Bordel",
+        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
+        "https://victoriavevest.com/spil/")
 );
 
 console.log(multimediadesigner.portfolioProjects);
