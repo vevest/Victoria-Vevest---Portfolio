@@ -152,7 +152,7 @@ const multimediadesigner = new MultimediaDesigner(
     "Victoria Vevest",
     "img/placeholder.jpg", // Mangler billede
     "Creative and curious developer, with ambition and appetite for knowledge",
-    ["HTML", "CSS", "JavaScript", "SCSS", "View All"]
+    ["Vis alle", "HTML", "CSS", "JavaScript", "SCSS"]
 );
 
 // Opretter projekter og tilføjer dem til portfolio ved hjælp af Project-klassen

@@ -66,7 +66,7 @@ h2{
 
 h3{
     font-family: "Oswald-bold";
-    font-size: 40px;
+    font-size: 35px;
 }
 
 h4{
@@ -170,14 +170,15 @@ p{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-right: 4rem;
+    padding-bottom: 7rem;
 }
 
-.container h2{
+/* .container h4{
     display: flex;
     align-self: flex-start;
     margin-bottom: 0.5rem;
-}
+    padding-left: 1rem;
+} */
 
 #skillButtons button{
     appearance: none; 
@@ -209,8 +210,7 @@ p{
     display: flex;
     flex-wrap: wrap; 
     gap: 10px; 
-    margin-bottom: 20px; 
-    align-self: flex-start;
+    align-self: center;
 }
 
 
@@ -277,6 +277,60 @@ p{
     color: #00E5FF;
     font-family: "Oswald-medium"; 
     margin-top: 10px;
+}
+
+
+/*--------Visuel gennemgang-----------*/
+#gennemgang{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+
+#gennemgang .kyllinger{
+    object-fit: cover;
+    width: 85%;
+    padding-bottom: 5rem;
+}
+
+#gennemgang .ikoner{
+    object-fit: cover;
+    width: 85%;
+    padding-bottom: 7rem;
+    padding-left: 4%;
+}
+
+#gennemgang .morten{
+    object-fit: cover;
+    width: 60%;
+    padding-bottom: 7rem;
+    padding-left: 4%;
+}
+
+#gennemgang .javascript{
+    object-fit: cover;
+    width: 100%;
+    padding-bottom: 7rem;
+    padding-left: 4%;
+}
+
+#gennemgang h3{
+    padding-bottom: 1rem;
+}
+
+#gennemgang h4{
+    padding-bottom: 2rem;
+}
+
+#gennemgang p {
+    padding: 3rem;
+    background-color: #122B65;
+    width: 80%;
+    border-radius: 14px;
+    margin-bottom: 7rem;
+    box-shadow: 0px 4px 10px #000c1e34;
 }
 
 
