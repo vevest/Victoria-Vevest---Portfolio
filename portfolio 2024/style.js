@@ -151,7 +151,7 @@ class MultimediaDesigner {
 const multimediadesigner = new MultimediaDesigner(
     "Victoria Vevest",
     "img/placeholder.jpg", // Mangler billede
-    "Creative and curious designer, with ambition and appetite for knowledge",
+    "Creative and curious developer, with ambition and appetite for knowledge",
     ["HTML", "CSS", "JavaScript", "React", "Typescript", "Illustrator", "Figma", "After Effects", "InDesign", "WordPress", "GitHub", "SASS", "SCSS"]
 );
 
