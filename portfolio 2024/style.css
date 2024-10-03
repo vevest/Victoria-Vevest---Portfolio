@@ -78,12 +78,15 @@ h4{
 
 p{
     font-family: "Quicksand";
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     color: var(--grey) ;
 }
 
 #sidenav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     height: 100%;
     width: 500px;
     position: fixed;
@@ -96,7 +99,7 @@ p{
   }
   
   #sidenav p {
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
     max-width: 70%;
   }
 
@@ -104,15 +107,27 @@ p{
     margin-bottom: 0.3rem;
   }
 
-  #sidenav a {
+  #sidenav .tekst {
     text-decoration: none;
     font-family: "Oswald-medium";
-    font-size: 30px;
-    font-size: 25px;
+    font-size: 20px;
     color: var(--secondary);
     display: block;
-    padding-top: 1rem;
   }
+
+  .socials {
+    display: flex;
+    margin-bottom: 2rem;
+    margin-top: 30%;
+
+}
+
+.fa-brands {
+    width: 3rem;
+    font-size: 25px;
+    
+}
+  
   
   #sidenav a:hover {
     color: var(--tertiary);
