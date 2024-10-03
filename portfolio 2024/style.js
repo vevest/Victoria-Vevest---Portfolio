@@ -1,12 +1,14 @@
-'use strict';
-// Opretter en class med en constructor til mine objekter
+'use strict'
+
 class ScreenManager {
     constructor() {
         this.firstScreen = document.querySelector("#firstscreen");
         this.secondScreen = document.querySelector("#secondscreen");
         this.aboutScreen = document.querySelector("#about");
         this.circle = document.querySelector(".cirkel");
-
+        this.sidenav = document.querySelector("#sidenav");
+        this.mainElement = document.querySelector("main");
+        
         this.init();
     }
 
@@ -17,69 +19,63 @@ class ScreenManager {
     }
 
     firstScreenDisplay() {
-        console.log("vis titel skærm");
         this.windowResize();
         this.hideAllScreens();
-
         this.firstScreen.classList.remove("hide");
-
-        // Fjerner zoom-klassen, så den kan aktiveres igen
         this.circle.classList.remove("zoom");
 
-        // Starter zoom-animationen igen
-        setTimeout(() => {
-            this.getSecondScreen();
-        }, 1000); 
+        setTimeout(() => this.getSecondScreen(), 1000);
     }
 
     getSecondScreen() {
-        console.log("getSecondscreen");
-        // Adder zoom-klassen
         this.circle.classList.add("zoom");
 
         setTimeout(() => {
             this.hideAllScreens();
             this.secondScreen.classList.remove("hide");
-
-            // Sætter tiden til fade-up
             setTimeout(() => this.fadeOutSecondScreen(), 500);
         }, 500);
     }
 
     fadeOutSecondScreen() {
-        console.log("Fade out secondscreen");
         this.secondScreen.classList.add("fade-up");
 
-        // Finder .striber classen og tilføjer fade-up-slow animation
         const striber = this.secondScreen.querySelector(".striber");
         if (striber) {
-            console.log("Striber elementet blev fundet", striber);
-            striber.classList.add("fade-up-slow");  
+            striber.classList.add("fade-up-slow");
         }
 
         setTimeout(() => {
             this.hideAllScreens();
+            this.sidenav.classList.remove("hide");
             this.aboutScreen.classList.remove("hide");
-        }, 1000);  
+            this.updateMainMargin(); // Opdater margin-left for main
+        }, 1000);
     }
 
     hideAllScreens() {
-        console.log("hideAllScreens");
         this.firstScreen.classList.add("hide");
         this.secondScreen.classList.add("hide");
         this.aboutScreen.classList.add("hide");
+        this.sidenav.classList.add("hide");
+        this.updateMainMargin(); // Opdater margin-left til 0px
+    }
+
+    updateMainMargin() {
+        const main = document.querySelector('main');
+        if (!this.sidenav.classList.contains('hide')) {
+            main.style.marginLeft = '500px';
+        } else {
+            main.style.marginLeft = '0px';
+        }
     }
 
     windowResize() {
         let widthScreen = document.querySelector("main").clientWidth;
-        // Sørger for at skærmen altid resizer 
     }
 }
 
-// Initialiserer min screenmanager
 const screenManager = new ScreenManager();
-
-
 
 
 
