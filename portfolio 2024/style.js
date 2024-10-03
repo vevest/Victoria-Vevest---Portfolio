@@ -16,6 +16,7 @@ class ScreenManager {
         window.addEventListener("load", () => this.firstScreenDisplay());
         window.addEventListener("resize", () => this.windowResize());
         console.log("dit javaScript virker");
+        this.firstScreen.classList.remove("hide");
     }
 
     firstScreenDisplay() {
