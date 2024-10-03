@@ -175,7 +175,7 @@ p{
 }
 
 .video1 {
-    padding: 2rem 2rem 5rem 2rem;
+    padding: 2rem 3rem 5rem 3rem;
     object-fit: cover;
 }
 
@@ -187,11 +187,11 @@ p{
 
 .container-vid h4 {
     text-align: center;
+    padding-bottom: 1.5rem;
 }
 
 .container-vid p {
     text-align: center;
-    padding-top: 0.5rem;
 }
 
 /*------- projekt og filterbuttons-------*/
