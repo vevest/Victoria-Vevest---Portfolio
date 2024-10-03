@@ -171,7 +171,7 @@ p{
 .container{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     padding-bottom: 7rem;
 }
 
@@ -241,20 +241,30 @@ p{
 
 .project a{
     font-family: "Quicksand";
-    font-size: 20px;
+    font-size: 17px;
+    background-color: #122B65;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    color: var(--secondary);
+}
+
+.project .btn{
     grid-column: 2/3;
     grid-row: 2/3;
-    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
 }
 
 .project a:hover{
-    color: var(--tertiary);
+    border: 1px solid var(--secondary);
 }
+
 
 .project img{
     object-fit: cover;
-    max-width: 8rem;
-    max-height: 8rem;
+    max-width: 3rem;
+    border-radius: 6px;
 }
 
 .project p{

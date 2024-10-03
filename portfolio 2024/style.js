@@ -167,8 +167,8 @@ multimediadesigner.addPortfolioProject(
 multimediadesigner.addPortfolioProject(
     new Project(
         "Real Relief",
-        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/realrelief.png",
-        "https://victoriavevest.com/mortenskyllinger/")
+        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", [ "InDesign", "Figma", "Wordpress", "After Effects"], "img/realrelief.png",
+        "https://rannvagn.com/wordpress/")
 );
 
 multimediadesigner.addPortfolioProject(
@@ -181,7 +181,7 @@ multimediadesigner.addPortfolioProject(
 multimediadesigner.addPortfolioProject(
     new Project(
         "Bedstemors Bordel",
-        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/bedstemor.svg",
+        "A whack-a-mole game, focusing on making the game function with javascript, and incorporating the japanese Kawaii style in the animations for a more cute and likeable look. ", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/bedstemor.svg",
         "https://victoriavevest.com/spil/")
 );
 
@@ -203,7 +203,9 @@ function displayProjects(projects) {
             <h4>${project.name}</h4>
             <img src="${project.img}" alt="${project.name} Image" style="width: 100%; max-width: 300px;"> <!-- Tilføjet billede her -->
             <p>${project.description}</p>
-            <a href="${project.link}" target="_blank">View Project</a>
+            <div class="btn">
+                <a href="${project.link}" target="_blank">View Project</a>
+            </div>
             <div class="skills">
                 ${project.skills.map(skill => `<span>${skill}</span>`).join(" ")}
             </div>
