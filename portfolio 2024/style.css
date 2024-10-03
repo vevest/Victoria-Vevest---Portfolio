@@ -156,7 +156,7 @@ p{
 }
 
 .video1 {
-    padding-top: 2rem;
+    padding: 5rem 2rem;
     object-fit: cover;
 }
 
@@ -175,12 +175,6 @@ p{
     padding-bottom: 7rem;
 }
 
-/* .container h4{
-    display: flex;
-    align-self: flex-start;
-    margin-bottom: 0.5rem;
-    padding-left: 1rem;
-} */
 
 #skillButtons button{
     appearance: none; 
@@ -324,7 +318,7 @@ p{
 
 #gennemgang #javascript{
     object-fit: cover;
-    width: 100%;
+    width: 90%;
     padding-bottom: 7rem;
     padding-left: 4%;
 }
