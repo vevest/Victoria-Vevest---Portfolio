@@ -8,7 +8,7 @@ class ScreenManager {
         this.circle = document.querySelector(".cirkel");
         this.sidenav = document.querySelector("#sidenav");
         this.mainElement = document.querySelector("main");
-        
+
         this.init();
     }
 
@@ -76,7 +76,6 @@ class ScreenManager {
 }
 
 const screenManager = new ScreenManager();
-
 
 
 
@@ -155,7 +154,7 @@ const multimediadesigner = new MultimediaDesigner(
 multimediadesigner.addPortfolioProject(
     new Project(
         "Beyond Branding",
-        "A Multimedia design bureau that creates bold, brave and innovative web-solutions", ["HTML", "CSS", "GitHub", "InDesign", "After Effects", "SASS", "SCSS", "Figma"], "img/spil-start.png", "https://www.rannvagn.com/Branding/")
+        "A Multimedia design bureau that creates bold, brave and innovative web-solutions", ["HTML", "CSS", "GitHub", "InDesign", "After Effects", "SASS", "SCSS", "Figma"], "img/beyond.png", "https://www.rannvagn.com/Branding/")
 );
 
 multimediadesigner.addPortfolioProject(
@@ -168,21 +167,21 @@ multimediadesigner.addPortfolioProject(
 multimediadesigner.addPortfolioProject(
     new Project(
         "Real Relief",
-        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
+        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/realrelief.png",
         "https://victoriavevest.com/mortenskyllinger/")
 );
 
 multimediadesigner.addPortfolioProject(
     new Project(
         "Digital Sikkerhed",
-        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
+        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/digitaltryghed.png",
         "https://victoriavevest.com/mortenskyllinger/")
 );
 
 multimediadesigner.addPortfolioProject(
     new Project(
         "Bedstemors Bordel",
-        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
+        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/bedstemor.svg",
         "https://victoriavevest.com/spil/")
 );
 
