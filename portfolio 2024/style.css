@@ -31,7 +31,7 @@ a {
 body{
     --primary: #021645;
     --secondary: #FEFFFF;
-    --tertiary: #00A3FF;
+    --tertiary: #00E5FF;
     --blue: #2F5597;
     --black: #00091A;
     --grey: #abb8e2;
@@ -64,7 +64,6 @@ h2{
     font-family: "Oswald-light";
     font-size: 25px;
     margin-bottom: 1.7rem;
-    color: var(--tertiary);
 }
 
 h3{
@@ -79,7 +78,7 @@ h4{
 
 p{
     font-family: "Quicksand";
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--grey) ;
 }
@@ -162,6 +161,17 @@ p{
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 8rem;
+}
+
+#about a{
+    font-family: "Quicksand";
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--secondary) ;
+}
+
+#about a:hover{
+    color: var(--tertiary) ;
 }
 
 .video1 {
