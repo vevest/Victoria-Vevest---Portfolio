@@ -147,7 +147,7 @@ class MultimediaDesigner {
 const multimediadesigner = new MultimediaDesigner(
     "Victoria Vevest",
     "img/placeholder.jpg", // Mangler billede
-    "Creative and curious developer, with ambition and appetite for knowledge",
+    "Kreativ og nysgerrig webudvikler med ambition og appetit for viden.",
     ["Vis alle", "HTML", "CSS", "JavaScript", "SCSS"]
 );
 
@@ -155,34 +155,34 @@ const multimediadesigner = new MultimediaDesigner(
 multimediadesigner.addPortfolioProject(
     new Project(
         "Beyond Branding",
-        "A Multimedia design bureau that creates bold, brave and innovative web-solutions", ["HTML", "CSS", "GitHub", "InDesign", "After Effects", "SASS", "SCSS", "Figma"], "img/beyond.png", "https://www.rannvagn.com/Branding/")
+        "En website for et made-up multimediedesign bureau som kreerer BOLD, brave and innovative webløsninger.", ["HTML", "CSS", "GitHub", "InDesign", "After Effects", "SASS", "SCSS", "Figma"], "img/beyond.png", "https://www.rannvagn.com/Branding/")
 );
 
 multimediadesigner.addPortfolioProject(
     new Project(
         "Mortens Kyllinger",
-        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
+        "Et whack-a-mole spil kodet med JavaScript med formålet at lære spilleren om Bird in hand princippet, og om IBA Erhvervsakademi.", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/spil-start.png",
         "https://victoriavevest.com/mortenskyllinger/")
 );
 
 multimediadesigner.addPortfolioProject(
     new Project(
         "Real Relief",
-        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", [ "InDesign", "Figma", "Wordpress", "After Effects"], "img/realrelief.png",
+        "En webside konstrueret med Wordpress, omhandlende et produkt, hvor virksomheden ville have det promoveret på en ny måde", [ "InDesign", "Figma", "Wordpress", "After Effects"], "img/realrelief.png",
         "https://rannvagn.com/wordpress/")
 );
 
 multimediadesigner.addPortfolioProject(
     new Project(
         "Digital Sikkerhed",
-        "A whack-a-mole game made to inform players about the 'bird in hand' concept, and about IBA-Erhvervsakademi in general", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/digitaltryghed.png",
-        "https://victoriavevest.com/mortenskyllinger/")
+        "En website med fokus på at begå sig sikkert på nettet. Der er vha. JavaScript konstrueret en quizz med branching scenarios. ", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/digitaltryghed.png",
+        "https://victoriavevest.com/datasikkerhed/")
 );
 
 multimediadesigner.addPortfolioProject(
     new Project(
         "Bedstemors Bordel",
-        "A whack-a-mole game, focusing on making the game function with javascript, and incorporating the japanese Kawaii style in the animations for a more cute and likeable look. ", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/bedstemor.svg",
+        "Et whack-a-mole spil kodet i JavaScript. Animations stilen er inspireret af den japanske stil Kawaii. ", ["HTML", "CSS", "JavaScript", "Illustrator", "Figma", "GitHub"], "img/bedstemor.svg",
         "https://victoriavevest.com/spil/")
 );
 
@@ -205,7 +205,7 @@ function displayProjects(projects) {
             <img src="${project.img}" alt="${project.name} Image" style="width: 100%; max-width: 300px;"> <!-- Tilføjet billede her -->
             <p>${project.description}</p>
             <div class="btn">
-                <a href="${project.link}" target="_blank">View Project</a>
+                <a href="${project.link}" target="_blank">Vis website</a>
             </div>
             <div class="skills">
                 ${project.skills.map(skill => `<span>${skill}</span>`).join(" ")}
