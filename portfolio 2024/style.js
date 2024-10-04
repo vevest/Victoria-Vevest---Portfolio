@@ -89,8 +89,9 @@ class ScreenManager {
 
     updateMainMargin() {
         const main = document.querySelector('main');
-        if (!this.sidenav.classList.contains('hide')) {
-            main.style.marginLeft = '500px';
+        if (this.sidenav && !this.sidenav.classList.contains('hide')) {
+            main.style.marginLeft = '500px'; 
+            // Juster denne værdi, hvis nødvendigt
         } else {
             main.style.marginLeft = '0px';
         }
