@@ -13,10 +13,35 @@ class ScreenManager {
     }
 
     init() {
-        window.addEventListener("load", () => this.firstScreenDisplay());
+        window.addEventListener("load", () => {
+            this.windowResize(); // Kald windowResize ved indlæsning
+            if (window.innerWidth > 700) {
+                this.firstScreenDisplay(); 
+                // Vis firstscreen, hvis bredden er over 700px
+            }
+        });
         window.addEventListener("resize", () => this.windowResize());
         console.log("dit javaScript virker");
-        this.firstScreen.classList.remove("hide");
+    }
+
+    windowResize() {
+        let widthScreen = document.querySelector("main").clientWidth;
+
+        // Tjekker om firstScreen og secondScreen skal skjules
+        if (widthScreen < 700) {
+            // Skjul firstScreen og secondScreen
+            this.firstScreen.classList.add("hide");
+            this.secondScreen.classList.add("hide");
+
+            // Vis sidenavigationen straks
+            this.sidenav.classList.remove("hide");
+        } else {
+            // Vis firstScreen igen, hvis den er skjult og vinduet er stort nok
+            if (this.firstScreen.classList.contains("hide")) {
+                this.firstScreen.classList.remove("hide"); // Vis firstScreen som standard
+                this.firstScreenDisplay(); // Vis førsteskærmen
+            }
+        }
     }
 
     firstScreenDisplay() {
@@ -71,9 +96,6 @@ class ScreenManager {
         }
     }
 
-    windowResize() {
-        let widthScreen = document.querySelector("main").clientWidth;
-    }
 }
 
 const screenManager = new ScreenManager();

@@ -53,6 +53,13 @@ main.show-main {
     margin-left: 500px;
 }
 
+footer{
+    margin-left: 500px;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+    text-align: center;
+}
+
 h1{
     margin-top: 4rem;
     font-family: "Oswald-bold";
