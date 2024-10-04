@@ -15,7 +15,7 @@ class ScreenManager {
     init() {
         window.addEventListener("load", () => {
             this.windowResize(); // Kald windowResize ved indlæsning
-            if (window.innerWidth > 700) {
+            if (window.innerWidth > 800) {
                 this.firstScreenDisplay(); 
                 // Vis firstscreen, hvis bredden er over 700px
             }
@@ -28,7 +28,7 @@ class ScreenManager {
         let widthScreen = document.querySelector("main").clientWidth;
 
         // Tjekker om firstScreen og secondScreen skal skjules
-        if (widthScreen < 700) {
+        if (widthScreen < 800) {
             // Skjul firstScreen og secondScreen
             this.firstScreen.classList.add("hide");
             this.secondScreen.classList.add("hide");

@@ -1,28 +1,84 @@
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     #sidenav{
+        position: inherit;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    #sidenav p{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .fa-brands {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1{
+        font-size: 45px;
+    }
+    
+
+
+    footer{
+        text-align: center;
+        margin-left: 0;
+
+    }
+
+    .video1 {
+        object-fit: cover;
+    }
+
+
+    .container-vid {
         position: inherit;
         margin-left: auto;
         margin-right: auto;
     }
 
-
-
-    main{
+    #skillButtons button{
         margin-left: auto;
         margin-right: auto;
+
     }
 
-    footer{
-        text-align: center;
-    }
-
-    .socials {
+    #skillButtons {
         display: flex;
-        justify-content: start;
-        margin-bottom: 2rem;
-        margin-top: 30%;
+        flex-wrap: wrap; 
+        gap: 5px; 
+        align-self: center;
     }
 
+  
 
 
+}
+
+@media only screen and (max-width: 500px) {
+    .project {
+        border: 0;
+        padding: 2rem 2rem;
+        max-width: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 1.5rem;
+        border-radius: 14px;
+    }
+    
+    
+    .project a{
+        font-family: "Quicksand";
+        font-size: 17px;
+        background-color: #122B65;
+        padding: 0;
+        border-radius: 20px;
+        color: var(--secondary);
+    }
 }
