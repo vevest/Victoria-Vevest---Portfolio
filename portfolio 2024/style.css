@@ -84,9 +84,6 @@ p{
 }
 
 #sidenav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     height: 100%;
     width: 500px;
     position: fixed;

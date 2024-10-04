@@ -143,12 +143,12 @@ class MultimediaDesigner {
     }
 }
 
-// Opretter en variable af MultimediaDesigner 
+// Opretter en variable af MultimediaDesigner hvis jeg beslutter at ændre i mit portfolio på et senere tidspunkt og derved får brug for den
 const multimediadesigner = new MultimediaDesigner(
     "Victoria Vevest",
-    "img/placeholder.jpg", // Mangler billede
+    "img/portrait.png", 
     "Kreativ og nysgerrig webudvikler med ambition og appetit for viden.",
-    ["Vis alle", "HTML", "CSS", "JavaScript", "SCSS"]
+    [ "HTML", "CSS", "JavaScript", "SCSS"]
 );
 
 // Opretter projekter og tilføjer dem til portfolio ved hjælp af Project-klassen
@@ -186,6 +186,7 @@ multimediadesigner.addPortfolioProject(
         "https://victoriavevest.com/spil/")
 );
 
+
 console.log(multimediadesigner.portfolioProjects);
 
 //Nu vil jeg gerne vise det på min website og jeg bruger nu min html
@@ -199,7 +200,7 @@ function displayProjects(projects) {
         // Opret HTML for hvert projekt
         const projectDiv = document.createElement("div");
         projectDiv.classList.add("project");
-
+        //Tilføjer strukturen for hvordan projekterne skal vises
         projectDiv.innerHTML = `
             <h4>${project.name}</h4>
             <img src="${project.img}" alt="${project.name} Image" style="width: 100%; max-width: 300px;"> <!-- Tilføjet billede her -->
@@ -222,7 +223,7 @@ displayProjects(multimediadesigner.portfolioProjects);
 // Funktion til at vise knapper for færdigheder
 function displaySkillButtons(skills) {
     const skillButtonsContainer = document.getElementById("skillButtons");
-    skillButtonsContainer.innerHTML = ""; // Tømmer knaplisten
+    skillButtonsContainer.innerHTML = ""; // Tømmer knaplisten så jeg kan putte noget i den
 
     skills.forEach(skill => {
         const button = document.createElement("button");
@@ -236,11 +237,21 @@ function displaySkillButtons(skills) {
 
         skillButtonsContainer.appendChild(button); // Tilføj knappen til DOM'en
     });
+
+    // Opretter og tilføjer "Nulstil"-knappen EFTER færdighedsknapperne
+    const resetButton = document.createElement('button');  
+    resetButton.id = "resetButton";
+    resetButton.textContent = "Nulstil";
+
+    // Event listener der viser alle projekterne igen, når "Nulstil"-knappen klikkes
+    resetButton.addEventListener("click", () => {
+        displayProjects(multimediadesigner.portfolioProjects); 
+    });
+
+    skillButtonsContainer.appendChild(resetButton); // Tilføjer "Nulstil"-knappen til DOM'en
 }
 
 // Viser alle færdigheder som klikbare knapper
 displaySkillButtons(multimediadesigner.skills);
 
 
-//-------Smooth scroll når links klikkes
-var scroll = new SmoothScroll('a[href*="#"]');
