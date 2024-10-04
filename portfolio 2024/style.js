@@ -14,10 +14,11 @@ class ScreenManager {
 
     init() {
         window.addEventListener("load", () => {
-            this.windowResize(); // Kald windowResize ved indlæsning
+            this.windowResize(); 
+            // Kalder windowResize ved indlæsning
             if (window.innerWidth > 800) {
                 this.firstScreenDisplay(); 
-                // Vis firstscreen, hvis bredden er over 700px
+                // Viser firstscreen, hvis skærm er over 800px
             }
         });
         window.addEventListener("resize", () => this.windowResize());
@@ -29,17 +30,19 @@ class ScreenManager {
 
         // Tjekker om firstScreen og secondScreen skal skjules
         if (widthScreen < 800) {
-            // Skjul firstScreen og secondScreen
+            // Skjuler firstScreen og secondScreen hvis px er mindre end 800
             this.firstScreen.classList.add("hide");
             this.secondScreen.classList.add("hide");
 
-            // Vis sidenavigationen straks
+            // Viser sidenavigationen og about med det samme
             this.sidenav.classList.remove("hide");
+            this.aboutScreen.classList.remove("hide");
         } else {
-            // Vis firstScreen igen, hvis den er skjult og vinduet er stort nok
+            // Viser firstScreen hvis den er skjult og skærm er stort nok
             if (this.firstScreen.classList.contains("hide")) {
-                this.firstScreen.classList.remove("hide"); // Vis firstScreen som standard
-                this.firstScreenDisplay(); // Vis førsteskærmen
+                this.firstScreen.classList.remove("hide"); 
+                // Viser firstScreen som standard
+                this.firstScreenDisplay(); 
             }
         }
     }
@@ -73,9 +76,19 @@ class ScreenManager {
 
         setTimeout(() => {
             this.hideAllScreens();
-            this.sidenav.classList.remove("hide");
+            // Tjekker skærmbredden før visning af sidenavigationen og about
+            if (window.innerWidth < 700) {
+                this.sidenav.classList.remove("hide"); 
+                // Viser sidenavigationen med det samme
+                this.aboutScreen.classList.remove("hide");
+                //viser about med det samme
+            } else {
+                this.sidenav.classList.remove("hide"); 
+                // Viser sidenavigationen efter fade
+            }
             this.aboutScreen.classList.remove("hide");
-            this.updateMainMargin(); // Opdater margin-left for main
+            //Viser about efter fade
+            this.updateMainMargin(); // Opdaterer margin-left for main
         }, 1000);
     }
 
@@ -84,14 +97,14 @@ class ScreenManager {
         this.secondScreen.classList.add("hide");
         this.aboutScreen.classList.add("hide");
         this.sidenav.classList.add("hide");
-        this.updateMainMargin(); // Opdater margin-left til 0px
+        this.updateMainMargin(); // Opdatere margin-left til 0px
     }
 
     updateMainMargin() {
         const main = document.querySelector('main');
         if (this.sidenav && !this.sidenav.classList.contains('hide')) {
             main.style.marginLeft = '500px'; 
-            // Juster denne værdi, hvis nødvendigt
+        
         } else {
             main.style.marginLeft = '0px';
         }
